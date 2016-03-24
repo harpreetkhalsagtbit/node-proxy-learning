@@ -1,0 +1,17 @@
+{
+  "name": "nodeproxy",
+  "version": "0.0.1",
+  "description": "proxy server node.js",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "http-proxy": "^1.13.2",
+    "lodash": "^4.6.1",
+    "url": "^0.11.0"
+  },
+  "author": "harpreetkhalsagtbit (https://github.com/harpreetkhalsagtbit)",
+  "license": "GPL",
+  "devDependencies": {
+    "http-proxy-middleware": "^0.12.0"
+  }
+}
