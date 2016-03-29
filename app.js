@@ -50,7 +50,7 @@ var options = {
 	},
 	proxyTable: {
 		// when request.url == 'localhost:3000/api/v1', 
-		// override target 'http://localhost' to 'http://localhost:3001' or 'http://localhost:3001/carton'    
+		// override target(options.target) 'http://localhost' to 'http://localhost:3001' or 'http://localhost:3001/carton'    
 		'localhost:3000/api/v1': 'http://localhost:3001',
 		'localhost:3000/api/v2': 'http://localhost:3002',
 		'localhost:3000/api/v3': 'http://localhost:3003',
