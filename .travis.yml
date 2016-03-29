@@ -12,7 +12,8 @@ before_script:
 
 script: npm run coverage
 
-after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
-
-after_success:
-  - coveralls
+after_script: 
+- ./node_modules/karma/bin/karma start
+- istanbul cover ./node_modules/mocha/bin/_mocha server/api/**/*.spec.js
+- cat ./coverage/lcov.info ./coverage/karma/**/*.info > lcov.info 
+- node node_modules/lcov-filter/index.js lcov.info config | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
