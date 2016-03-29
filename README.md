@@ -33,4 +33,30 @@ apiRoutes.use(function timeLog(req, res, next) {
 	//    .send('Access Forbidden');
 });
 
+var middleStringApi = "/api"
+// apply the routes to our application with the prefix /api
+app.use(middleStringApi, apiRoutes);
+
+.
+.
+.
+.
+.
+
+var options = {
+	target: 'http://localhost', // target host 
+	changeOrigin: true, // needed for virtual hosted sites 
+	ws: true, // proxy websockets 
+	pathRewrite: {
+	},
+	proxyTable: {
+	}
+};
+
+// create the proxy 
+var proxy = proxyMiddleware(middleStringApi, options);
+
+app.use(proxy);
+
+
 ```
