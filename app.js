@@ -86,3 +86,6 @@ apiRoutes.get(/* /api/v3/carton */ "/v3/carton", function timeLog(req, res, next
 // =======================
 app.listen(port);
 console.log('Magic happens at http://localhost:' + port);
+
+
+module.exports = app
