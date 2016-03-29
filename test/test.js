@@ -3,7 +3,8 @@ var request = require('request');
 var assert = require('assert');
 describe('loading express', function() {
     beforeEach(function() {
-        var server = require('../app');
+        // Start Proxy Server and Other Dependent Server
+        var proxyServer = require('../app');
 
         var server1 = require('../server1');
         var server2 = require('../server2');
@@ -11,7 +12,7 @@ describe('loading express', function() {
         http.createServer(server1);
         http.createServer(server2);
         http.createServer(server3);
-        http.createServer(server);
+        http.createServer(proxyServer);
     });
     it('Proxy to Server1', function testPath(done) {
         request('http://localhost:3000/api/v1/carton', function(err, res, body) {
