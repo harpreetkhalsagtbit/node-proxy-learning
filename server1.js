@@ -10,3 +10,5 @@ app.get('/',function(req,res) {
 });
 
 app.listen(3001);
+
+module.exports = app

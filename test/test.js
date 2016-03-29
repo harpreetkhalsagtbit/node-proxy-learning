@@ -2,9 +2,15 @@ var http = require('http');
 var request = require('request');
 var assert = require('assert');
 describe('loading express', function() {
-    var server;
     beforeEach(function() {
-        server = require('../app');
+        var server = require('../app');
+
+        var server1 = require('../server1');
+        var server2 = require('../server2');
+        var server3 = require('../server3');
+        http.createServer(server1);
+        http.createServer(server2);
+        http.createServer(server3);
         http.createServer(server);
     });
     it('Proxy to Server1', function testPath(done) {

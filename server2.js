@@ -6,3 +6,5 @@ app.get('/carton',function(req,res) {
 });
 
 app.listen(3002);
+
+module.exports = app
