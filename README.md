@@ -4,6 +4,8 @@ Express Middleware for Routing various API requests to Different Servers using n
 
 [![Build Status](https://travis-ci.org/harpreetkhalsagtbit/node-proxy-learning.svg?branch=master)](https://travis-ci.org/harpreetkhalsagtbit/node-proxy-learning)
 
+[![Coverage Status](https://coveralls.io/repos/github/harpreetkhalsagtbit/node-proxy-learning/badge.svg?branch=master)](https://coveralls.io/github/harpreetkhalsagtbit/node-proxy-learning?branch=master)
+
 #How to use?
 1. **clone** repo and `npm install`
 2. `cd node-proxy-learning` and `npm install`
