@@ -8,9 +8,13 @@
     "http-proxy-middleware": "^0.12.0",
     "request": "^2.69.0"
   },
-  "scripts":{
-    "test":"mocha -R spec test/test.js"
+  "scripts": {
+    "test": "mocha -R spec test/test.js",
+    "coverage": "istanbul cover _mocha -- -R spec"
   },
   "author": "harpreetkhalsagtbit (https://github.com/harpreetkhalsagtbit)",
-  "license": "GPL"
+  "license": "GPL",
+  "devDependencies": {
+    "istanbul": "^0.4.2"
+  }
 }
