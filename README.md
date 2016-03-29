@@ -4,6 +4,9 @@ Express Middleware for Routing various API requests to Different Servers using n
 
 [![Build Status](https://travis-ci.org/harpreetkhalsagtbit/node-proxy-learning.svg?branch=master)](https://travis-ci.org/simkimsia/UtilityBehaviors)
 
+#Tests
+`npm test`
+
 #How to use?
 1. **clone** repo and `npm install`
 2. `cd node-proxy-learning` and `npm install`
