@@ -15,6 +15,8 @@
   "author": "harpreetkhalsagtbit (https://github.com/harpreetkhalsagtbit)",
   "license": "GPL",
   "devDependencies": {
-    "istanbul": "^0.4.2"
+    "coveralls": "^2.11.9",
+    "istanbul": "^0.4.2",
+    "mocha-lcov-reporter": "^1.2.0"
   }
 }
