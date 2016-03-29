@@ -4,9 +4,9 @@ Express Middleware for Routing various API requests to Different Servers using n
 
 
 #How to use?
-1. clone repo and `npm install`
+1. **clone** repo and `npm install`
 2. `cd node-proxy-learning` and `npm install`
-2. **Run** diffrent servers - `node server1`,  `node server2`,  `node server3`,
+2. **Run** different servers - `node server1`,  `node server2`,  `node server3`,
 3. **Run** proxy-middleware - `node app.js`
 4. Open Browser(or use curl/ajax etc) and hit URLs
 
