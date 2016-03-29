@@ -66,6 +66,21 @@ var proxy = proxyMiddleware(middleStringApi, options);
 app.use(proxy);
 
 
+apiRoutes.get(/* /api/v1/carton */ "/v1/carton", function timeLog(req, res, next) {
+	console.log("Here - /api/v1/carton")
+	next();
+});
+
+apiRoutes.get(/* /api/v2/carton */ "/v2/carton", function timeLog(req, res, next) {
+	console.log("Here - /api/v2/carton")
+	next();
+});
+
+apiRoutes.get(/* /api/v3/carton */ "/v3/carton", function timeLog(req, res, next) {
+	console.log("Here - /api/v3/carton")
+	next();
+});
+
 // =======================
 // start the server ======
 // =======================
