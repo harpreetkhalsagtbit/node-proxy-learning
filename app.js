@@ -1,18 +1,44 @@
 var express = require('express');
 var app = express();
-var httpProxy = require('http-proxy');
-var apiProxy = httpProxy.createProxyServer();
 var proxyMiddleware = require('http-proxy-middleware');
-var _ = require('lodash');
 
-var url = require('url');
 
 // =======================
 // configuration =========
 // =======================
 var port = process.env.PORT || 3000; // used to create, sign, and verify tokens
 
+// =======================
+// routes ================
+// =======================
+// basic route
+app.get('/', function(req, res) {
+	res.send('Hello! The API is at http://localhost:3000' + '/api');
+});
+
+
+// API ROUTES -------------------
+// get an instance of the router for api routes
+var apiRoutes = express.Router();
+
+// middleware that is specific to this router
+// Authenticate User Before Proxing Request
+apiRoutes.use(function timeLog(req, res, next) {
+	console.log('Time: ', Date.now());
+
+	// Only If Authorized User
+	next();
+	// else block Request here
+	// res.status(403)        // HTTP status 403: Access Denied
+	//    .send('Access Forbidden');
+});
+
+
 var middleStringApi = "/api"
+// apply the routes to our application with the prefix /api
+app.use(middleStringApi, apiRoutes);
+
+
 var options = {
 	target: 'http://localhost', // target host 
 	changeOrigin: true, // needed for virtual hosted sites 
@@ -33,41 +59,6 @@ var options = {
 		'dev.localhost:3000': 'http://localhost:8000'
 	}
 };
-
-// =======================
-// routes ================
-// =======================
-// basic route
-app.get('/', function(req, res) {
-	res.send('Hello! The API is at http://localhost:3000' + '/api');
-});
-
-
-// API ROUTES -------------------
-// get an instance of the router for api routes
-var apiRoutes = express.Router();
-
-// middleware that is specific to this router
-apiRoutes.use(function timeLog(req, res, next) {
-	console.log('Time: ', Date.now());
-	next();
-});
-
-
-// route to return all users (GET http://localhost:8080/api/imageserver/users)
-apiRoutes.get(/.*/, function(req, res, next) {
-    console.log("req.originalUrl", req.originalUrl)
-    next();
-});
-
-apiRoutes.get("/test", function(req, res, next) {
-    console.log("API Test")
-    res.send('Hello! /api/test');
-});
-
-// apply the routes to our application with the prefix /api
-app.use(middleStringApi, apiRoutes);
-
 
 // create the proxy 
 var proxy = proxyMiddleware(middleStringApi, options);

@@ -5,9 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.13.4",
-    "http-proxy": "^1.13.2",
-    "lodash": "^4.6.1",
-    "url": "^0.11.0"
+    "http-proxy": "^1.13.2"
   },
   "author": "harpreetkhalsagtbit (https://github.com/harpreetkhalsagtbit)",
   "license": "GPL",
