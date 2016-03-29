@@ -5,11 +5,12 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.13.4",
-    "http-proxy": "^1.13.2"
+    "http-proxy-middleware": "^0.12.0",
+    "request": "^2.69.0"
+  },
+  "scripts":{
+    "test":"mocha -R spec test/test.js"
   },
   "author": "harpreetkhalsagtbit (https://github.com/harpreetkhalsagtbit)",
-  "license": "GPL",
-  "devDependencies": {
-    "http-proxy-middleware": "^0.12.0"
-  }
+  "license": "GPL"
 }
