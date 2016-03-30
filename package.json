@@ -9,15 +9,8 @@
     "request": "^2.69.0"
   },
   "scripts": {
-    "test": "mocha -R spec test/test.js  -R html-cov > coverage.html",
-    "coverage": "istanbul cover _mocha -- -R spec",
-    "test-travis": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*"
+    "test": "mocha -R spec test/test.js  -R html-cov > coverage.html"
   },
   "author": "harpreetkhalsagtbit (https://github.com/harpreetkhalsagtbit)",
-  "license": "GPL",
-  "devDependencies": {
-    "coveralls": "^2.11.9",
-    "istanbul": "^0.4.2",
-    "mocha-lcov-reporter": "^1.2.0"
-  }
+  "license": "GPL"
 }
