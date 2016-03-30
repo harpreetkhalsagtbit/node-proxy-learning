@@ -9,7 +9,7 @@
     "request": "^2.69.0"
   },
   "scripts": {
-    "test": "mocha -R spec test/test.js",
+    "test": "mocha -R spec test/test.js  -R html-cov > coverage.html",
     "coverage": "istanbul cover _mocha -- -R spec",
     "test-travis": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*"
   },
