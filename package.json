@@ -11,7 +11,7 @@
     "request": "^2.69.0"
   },
   "scripts": {
-    "test": "mocha -R spec test/test.js  -R html-cov > coverage.html"
+    "test": "mocha -R spec test/test.js"
   },
   "author": "harpreetkhalsagtbit (https://github.com/harpreetkhalsagtbit)",
   "license": "GPL",
