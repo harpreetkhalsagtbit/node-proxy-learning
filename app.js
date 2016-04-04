@@ -1,4 +1,7 @@
 var express = require('express');
+var helmet = require('helmet');
+var logger = require('express-logger');
+
 var app = express();
 var proxyMiddleware = require('http-proxy-middleware');
 
@@ -7,6 +10,14 @@ var proxyMiddleware = require('http-proxy-middleware');
 // configuration =========
 // =======================
 var port = process.env.PORT || 3000; // used to create, sign, and verify tokens
+
+// ===========================
+// Security configuration ====
+// ===========================
+app.use(helmet());
+app.use(logger({
+	path: './logfile.txt'
+}));
 
 // =======================
 // routes ================
@@ -34,7 +45,7 @@ apiRoutes.use(function timeLog(req, res, next) {
 });
 
 
-var middleStringApi = "/api"
+var middleStringApi = '/api';
 // apply the routes to our application with the prefix /api
 app.use(middleStringApi, apiRoutes);
 
@@ -50,11 +61,11 @@ var options = {
 	},
 	proxyTable: {
 		// when request.url == 'localhost:3000/api/v1', 
-		// override target(options.target) 'http://localhost' to 'http://localhost:3001' or 'http://localhost:3001/carton'    
+		// override target(options.target) 'http://localhost' to 'http://localhost:3001'
 		'localhost:3000/api/v1': 'http://localhost:3001',
 		'localhost:3000/api/v2': 'http://localhost:3002',
 		'localhost:3000/api/v3': 'http://localhost:3003',
-		// when request.headers.host == 'dev.localhost:3000', 
+		// when request.headers.host == 'dev.localhost:3000'
 		// override target 'http://www.example.org' to 'http://localhost:8000' 
 		'dev.localhost:3000': 'http://localhost:8000'
 	}
@@ -66,18 +77,18 @@ var proxy = proxyMiddleware(middleStringApi, options);
 app.use(proxy);
 
 
-apiRoutes.get(/* /api/v1/carton */ "/v1/carton", function timeLog(req, res, next) {
-	console.log("Here - /api/v1/carton")
+apiRoutes.get(/* /api/v1/carton */ '/v1/carton', function timeLog(req, res, next) {
+	console.log('Here - /api/v1/carton');
 	next();
 });
 
-apiRoutes.get(/* /api/v2/carton */ "/v2/carton", function timeLog(req, res, next) {
-	console.log("Here - /api/v2/carton")
+apiRoutes.get(/* /api/v2/carton */ '/v2/carton', function timeLog(req, res, next) {
+	console.log('Here - /api/v2/carton');
 	next();
 });
 
-apiRoutes.get(/* /api/v3/carton */ "/v3/carton", function timeLog(req, res, next) {
-	console.log("Here - /api/v3/carton")
+apiRoutes.get(/* /api/v3/carton */ '/v3/carton', function timeLog(req, res, next) {
+	console.log('Here - /api/v3/carton');
 	next();
 });
 
@@ -88,4 +99,4 @@ app.listen(port);
 console.log('Magic happens at http://localhost:' + port);
 
 
-module.exports = app
+module.exports = app;
