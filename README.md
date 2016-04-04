@@ -2,7 +2,7 @@
 
 Express Middleware for Routing various API requests to Different Servers using node [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) package.
 
-[![Build Status](https://travis-ci.org/harpreetkhalsagtbit/node-proxy-learning.svg?branch=master)](https://travis-ci.org/harpreetkhalsagtbit/node-proxy-learning)
+[![Build Status](https://travis-ci.org/harpreetkhalsagtbit/node-proxy-learning.svg?branch=master)](https://travis-ci.org/harpreetkhalsagtbit/node-proxy-learning)[![Dependencies](https://david-dm.org/harpreetkhalsagtbit/node-proxy-learning.svg?style=flat-square)](#)
 
 #How to use?
 1. **clone** repo and `npm install`
