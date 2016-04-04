@@ -1,6 +1,6 @@
 var express = require('express');
 var helmet = require('helmet');
-var logger = require('express-logger');
+var morgan = require('morgan');
 
 var app = express();
 var proxyMiddleware = require('http-proxy-middleware');
@@ -15,9 +15,7 @@ var port = process.env.PORT || 3000; // used to create, sign, and verify tokens
 // Security configuration ====
 // ===========================
 app.use(helmet());
-app.use(logger({
-	path: './logfile.txt'
-}));
+app.use(morgan('dev'));
 
 // =======================
 // routes ================
