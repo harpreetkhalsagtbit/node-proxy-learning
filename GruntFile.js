@@ -28,9 +28,6 @@ module.exports = function(grunt) {
   
   require('load-grunt-tasks')(grunt);
 
-    // // Load the plugin that provides the "uglify" task.
-  // grunt.loadNpmTasks('grunt-contrib-jshint');
-
   // Default task(s).
   grunt.registerTask('default', ['jshint', 'jscs']);
 
